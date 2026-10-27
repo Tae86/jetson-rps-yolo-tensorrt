@@ -1,0 +1,4 @@
+# TensorRT engine is device/version specific: rebuild with trtexec on the target Jetson
+best.engine
+venv/
+__pycache__/
