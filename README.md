@@ -22,7 +22,7 @@
 | 모델 | YOLO (Colab 학습) 3클래스: `scissors` / `rock` / `paper` |
 | 추론 최적화 | `best.pt → best.onnx → best.engine` (TensorRT, `trtexec`로 Jetson에서 변환) |
 | 실행 | `ultralytics`로 `.engine` 로드, `cv2.VideoCapture` 640×480, 버퍼 1 (지연 최소화) |
-| 보조 모듈 | `trt_module.py` — TensorRT 10.x `execute_async_v3` + zero-copy(pagelocked, DEVICEMAP) 버퍼 기반 추론 래퍼 |
+| 참고 모듈 | `trt_module.py` — 수업에서 제공된 TensorRT 추론 래퍼 (게임 실행에는 사용하지 않음) |
 | UI | OpenCV 전용 (마우스 버튼 + 키보드 입력) |
 
 ## 📁 파일 구성
@@ -32,7 +32,7 @@
 | `Mini_RPS.py` | 메인 게임 스크립트 |
 | `best.onnx` | 학습된 YOLO 모델 (ONNX) |
 | `rock.png` `paper.png` `scissors.png` | SINGLE 모드에서 CPU가 내는 손 이미지 |
-| `trt_module.py` | TensorRT 추론 래퍼 |
+| `trt_module.py` | 수업 제공 TensorRT 추론 래퍼 (참고용) |
 
 > `best.engine`은 Jetson/TensorRT 버전에 종속되므로 저장소에 포함하지 않았습니다. 아래 방법으로 직접 생성하세요.
 
